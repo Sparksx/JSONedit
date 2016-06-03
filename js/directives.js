@@ -31,11 +31,10 @@ angular.module('JSONedit', ['ui.sortable'])
         var stringName = "Text";
         var objectName = "Object";
         var arrayName = "Array";
-        var refName = "Reference";
         var boolName = "Boolean";
         var numberName = "Number";
 
-        scope.valueTypes = [stringName, objectName, arrayName, refName, boolName, numberName];
+        scope.valueTypes = [stringName, objectName, arrayName, boolName, numberName];
         scope.sortableOptions = {
             axis: 'y'
         };
@@ -134,8 +133,6 @@ angular.module('JSONedit', ['ui.sortable'])
                                         break;
                         case arrayName:   obj[scope.keyName] = [];
                                         break;
-                        case refName: obj[scope.keyName] = {"Reference!!!!": "todo"};
-                                        break;
                         case boolName: obj[scope.keyName] = false;
                                         break;
                     }
@@ -160,8 +157,6 @@ angular.module('JSONedit', ['ui.sortable'])
                     case arrayName:   obj.push([]);
                                     break;
                     case boolName:   obj.push(false);
-                                    break;
-                    case refName: obj.push({"Reference!!!!": "todo"});
                                     break;
                 }
                 scope.valueName = "";
